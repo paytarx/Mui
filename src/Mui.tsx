@@ -12,6 +12,9 @@ import axios from 'axios';
 import Switch from '@mui/material/Switch'
 import TextField  from '@mui/material/TextField'
 import { red , blue , orange , amber , blueGrey , brown , cyan} from '@mui/material/colors'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
 
 const Mui = () => {
  
@@ -28,9 +31,23 @@ const Mui = () => {
     const [loading , setLoading] = React.useState(false)
     const [text , setText] = React.useState('')
     const [display , setDisplay] = React.useState('');
-
     const [inputValue , setInputValue] = React.useState('')
     const [anotherText , setAnotherText] = React.useState('')
+    const [todos , setTodos] = React.useState<string[]>([])
+    const [todoText , setTodoText] = React.useState('')
+
+    const addTodo = () => {
+      if (text !== '') {
+        setTodos([...todos, text]);
+        setText('');
+      }
+    }
+    const removeTodo = (index: number) => {
+      const newTodos = todos.filter((todo, i) => i !== index);
+      setTodos(newTodos);
+    }
+
+
 
     const label = {inputProps : {'aria-label' : 'Checkbox demo'}}
     const labels: { [index: string]: string } = {
@@ -104,7 +121,7 @@ const Mui = () => {
           setLoading(true); // İstek başladığında isLoading'u true yap
           try {
               const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
-              console.log('Response:', response.data);
+              // console.log('Response:', response.data);
               setData(response.data);
           } catch (error) {
               console.error('Error:', error);
@@ -264,6 +281,38 @@ const Mui = () => {
             Submit
           </Button>
           <Typography variant='h5' color={blue[500]} > {inputValue} </Typography>
+
+        </div>
+
+        <div>
+          <TextField
+          label='Enter a todo'
+          variant='outlined'
+          value={todoText}
+          onChange={(e) => setTodoText(e.target.value)}
+          >
+          </TextField>
+
+          <Button
+          variant='contained'
+          onClick={addTodo}
+          >
+            Addtodo
+          </Button>
+
+          <List>
+            {todos && todos.map((todo,index) => (
+              <ListItem key={index}>
+                <ListItemText primary={todo} />
+                <Button variant='outlined' onClick={() => removeTodo(index)}>
+                  Remove
+                </Button>
+              </ListItem>
+            ))}
+          </List>
+
+            <Typography variant='h3'> {todos} </Typography>
+            <Typography variant='h3'> {todoText} </Typography>
 
         </div>
 
