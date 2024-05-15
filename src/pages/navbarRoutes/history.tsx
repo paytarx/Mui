@@ -1,11 +1,11 @@
 import React from 'react'
 
-const wikipedia = () => {
+const history = () => {
   return (
     <div className='border-2 w-full justify-center items-center text-center'>
-      <p>Wikipedia</p>
+      <p>History</p>
     </div>
   )
 }
 
-export default wikipedia
+export default history

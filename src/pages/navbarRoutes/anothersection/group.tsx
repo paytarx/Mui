@@ -2,8 +2,8 @@ import React from 'react'
 
 const group = () => {
   return (
-    <div>
-      
+    <div className='border-2 w-full justify-center items-center text-center'>
+      <p>Groups</p>
     </div>
   )
 }
