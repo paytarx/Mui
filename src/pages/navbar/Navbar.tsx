@@ -43,9 +43,7 @@ declare module 'react' {
   }
 }
 
-interface StyledTreeItemProps
-  extends Omit<UseTreeItem2Parameters, 'rootRef'>,
-    React.HTMLAttributes<HTMLLIElement> {
+interface StyledTreeItemProps extends Omit<UseTreeItem2Parameters, 'rootRef'>,React.HTMLAttributes<HTMLLIElement> {
   bgColor?: string;
   bgColorForDarkMode?: string;
   color?: string;
@@ -183,7 +181,6 @@ function getRandomNumberGroup (a:any,b:any){
 const randomNumberGroup = getRandomNumberGroup(0,100)
 
 export default function GmailTreeView() {
-
   return (
    <div className='flex duration-300'>
      <SimpleTreeView
@@ -360,7 +357,6 @@ export default function GmailTreeView() {
           bgColorForDarkMode={alpha('#9035ff', 0.15)}
         />
         </Link>
-        😂🤣🤣🤣🤣
         <Link to={"wikipedia"}>
         <CustomTreeItem
           itemId="19"
