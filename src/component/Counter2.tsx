@@ -1,7 +1,7 @@
-import { RootState } from "./redux/store"
+import { RootState } from "../pages/redux/store"
 import { useDispatch , useSelector} from 'react-redux'
-import { amount } from "./redux/newCounterSlice"
-import {up,down} from './redux/newCounterSlice'
+import { amount } from "../pages/redux/newCounterSlice"
+import {up,down} from '../pages/redux/newCounterSlice'
 
 
 const Counter2 = () => {

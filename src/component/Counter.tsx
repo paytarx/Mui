@@ -1,7 +1,7 @@
-import type {RootState} from './redux/store'
+import type {RootState} from '../pages/redux/store'
 import { useDispatch , useSelector} from 'react-redux'
-import { increment , decrement} from './redux/counterSlice'
-import { incrementByAmount } from './redux/counterSlice'
+import { increment , decrement} from '../pages/redux/counterSlice'
+import { incrementByAmount } from '../pages/redux/counterSlice'
 
 
 const Counter = () => {

@@ -15,6 +15,13 @@ import { blue } from "@mui/material/colors";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import { Routes, Route } from 'react-router-dom'
+import Mail from './pages/navbarRoutes/mail'
+import Trash from './pages/navbarRoutes/trash';
+import Forum from './pages/navbarRoutes/categories/forums'
+import Promotion from './pages/navbarRoutes/categories/promotion'
+import Social from './pages/navbarRoutes/categories/social'
+import Updates from './pages/navbarRoutes/categories/updates'
 
 const Mui = () => {
   interface Post {
@@ -268,7 +275,7 @@ const Mui = () => {
           multiline
           rows={4}
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e:any) => setText(e.target.value)}
           variant="outlined"
         ></TextField>
         <Button onClick={handleButtonClick} variant="contained" color="primary">
@@ -283,7 +290,7 @@ const Mui = () => {
           multiline
           rows={4}
           value={anotherText}
-          onChange={(e) => setAnotherText(e.target.value)}
+          onChange={(e:any) => setAnotherText(e.target.value)}
           variant="outlined"
         ></TextField>
         <Button variant="contained" color="warning" onClick={handleSetButton}>
@@ -300,7 +307,7 @@ const Mui = () => {
           label="Enter a todo"
           variant="outlined"
           value={todoText}
-          onChange={(e) => setTodoText(e.target.value)}
+          onChange={(e:any) => setTodoText(e.target.value)}
         ></TextField>
 
         <Button variant="contained" onClick={addTodo}>
