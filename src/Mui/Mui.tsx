@@ -15,13 +15,6 @@ import { blue } from "@mui/material/colors";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { Routes, Route } from 'react-router-dom'
-import Mail from './pages/navbarRoutes/mail'
-import Trash from './pages/navbarRoutes/trash';
-import Forum from './pages/navbarRoutes/categories/forums'
-import Promotion from './pages/navbarRoutes/categories/promotion'
-import Social from './pages/navbarRoutes/categories/social'
-import Updates from './pages/navbarRoutes/categories/updates'
 
 const Mui = () => {
   interface Post {
