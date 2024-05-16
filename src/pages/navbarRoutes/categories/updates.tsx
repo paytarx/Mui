@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar,
-  Typography,
-  Divider,
-  Box
-} from '@mui/material';
+import {Container,List,ListItem,ListItemText,ListItemAvatar,Avatar,Typography,Divider,Box} from '@mui/material';
 import UpdateIcon from '@mui/icons-material/Update';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 

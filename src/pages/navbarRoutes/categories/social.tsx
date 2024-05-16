@@ -34,7 +34,7 @@ const posts = [
 
 const Social: React.FC = () => {
   return (
-    <div>
+    <div className='w-full'>
       <Container component="main" maxWidth="md">
       <Box
         sx={{

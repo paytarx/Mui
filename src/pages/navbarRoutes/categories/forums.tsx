@@ -1,27 +1,9 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import {
-  Container,
-  TextField,
-  Button,
-  Box,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-} from '@mui/material';
+import {Container,TextField,Button,Box,Typography,List,ListItem,ListItemText,Paper,} from '@mui/material';
+//@ts-ignore
+import { Message, FormInputs } from '../../../types/forumTypes';
 
-type Message = {
-  id: number;
-  name: string;
-  content: string;
-};
-
-type FormInputs = {
-  name: string;
-  content: string;
-};
 
 const ForumPage: React.FC = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormInputs>();
@@ -34,7 +16,6 @@ const ForumPage: React.FC = () => {
     setMessageId(messageId + 1);
     reset();
   };
-
   return (
     <div className='w-full'>
           <Container component="main" maxWidth="md">
@@ -60,6 +41,7 @@ const ForumPage: React.FC = () => {
             autoFocus
             {...register('name', { required: 'Name is required' })}
             error={!!errors.name}
+            //@ts-ignore
             helperText={errors.name ? errors.name.message : ''}
           />
           <TextField
@@ -72,6 +54,7 @@ const ForumPage: React.FC = () => {
             rows={4}
             {...register('content', { required: 'Message content is required' })}
             error={!!errors.content}
+            //@ts-ignore
             helperText={errors.content ? errors.content.message : ''}
           />
           <Button
@@ -90,7 +73,7 @@ const ForumPage: React.FC = () => {
                 primary={message.name}
                 secondary={
                   <Typography
-                    sx={{ display: 'inline' }}
+                    sx={{ display: 'inline'}}
                     component="span"
                     variant="body2"
                     color="text.primary"
